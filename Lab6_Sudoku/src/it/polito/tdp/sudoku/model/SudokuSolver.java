@@ -11,14 +11,14 @@ public class SudokuSolver {
 	public int[][] ric(int passo, int[][] board){
 		if(passo == 81){
 //			soluzione trovata
-			return board;
+		return board;
 		}
 	if(board[passo / 9][passo % 9] == 0){
 			for(int i=1; i<=9; i++){
 					board[passo / 9][passo % 9]=i;
 					if(Utils.check(board,true)){
 						int[][] retBoard = ric(passo+1,board);
-						if(retBoard!=null) return retBoard;
+					if(retBoard!=null) return retBoard;
 					}
 //					backtrack
 					board[passo / 9][passo % 9]=0;
